@@ -1,0 +1,32 @@
+.personajes {
+    display: flex;
+    justify-content: space-around;
+}
+
+.tamaños {
+    height: 300px;
+    width: 1000;
+    opacity: 50%;
+    position: relative;
+    
+}
+.tamaños:hover {
+    opacity: 100%;
+    
+ 
+}
+.tamaños:active {
+    animation-name: opacity;
+    animation-duration: 999999999s;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
