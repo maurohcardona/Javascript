@@ -35,7 +35,7 @@ let nombre;
   //Funcion vidas restantes
    let vidas = 3
     function vidasRestantes(vidas){
-    for (vidas = 3; vidas >= 0; vidas--){
+    for (vidas = 3; vidas > 0; vidas--){
        if (vidas >= 1){
         alert ('Puede seguir jugando')}
         else{
@@ -51,7 +51,7 @@ let vida = 0
 let magia  = 0
 
 function caracterizacion(){
-    puntosPendientes = (fuerza - vida - magia)
+    puntosPendientes = puntosPendientes - ((fuerza - vida - magia))
     
 }
 
