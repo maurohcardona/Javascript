@@ -50,6 +50,32 @@ let fuerza = 0
 let vida = 0
 let magia  = 0
 
+function sumaFuerza(){
+    fuerza = fuerza + 1
+    return(fuerza)
+}
+function restaFuerza(){
+    fuerza = fuerza - 1
+    return(fuerza)
+}
+function sumaVida(){
+    vida = vida + 1
+    return(vida)
+}
+function restaVida(){
+    vida = vida - 1
+    return(vida)
+}
+function sumaMagia(){
+    return(magia)
+    magia = magia + 1
+}
+function restaMagia(){
+    return(magia)
+    magia = magia - 1
+}
+
+
 function caracterizacion(){
     puntosPendientes = puntosPendientes - ((fuerza - vida - magia))
     
@@ -64,4 +90,12 @@ function puntosPendiente() {
           else {
             alert ('No posee los puntos suficientes')
           }
+        }
+
+        //Inventario
+
+        const Inventario = [];
+
+        function AgregarAlInventario (objeto){
+            inventario.push (objeto)
         }
