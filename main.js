@@ -92,10 +92,27 @@ function puntosPendiente() {
           }
         }
 
-        //Inventario
+//Inventario
 
-        const Inventario = [];
+    const inventario = [];
 
-        function AgregarAlInventario (objeto){
-            inventario.push (objeto)
-        }
+     function AgregarAlInventario (objeto){
+        inventario.push (objeto.nombre)
+        console.log (inventario)
+     } 
+
+
+    function objeto (id, nombre, vida, magia, fuerza, daño) {
+        this.id = id;
+        this.nombre = nombre;
+        this.vida = vida;
+        this.magia = magia;
+        this.fuerza = fuerza;
+        this.daño = daño;
+        
+    }
+
+    const pocion = new objeto (1, 'Pocion', 10, 0, 0, 0);
+    const espada = new objeto (2, 'Espada', 0, 0, 2, 15 );
+
+   
