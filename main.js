@@ -115,4 +115,10 @@ function puntosPendiente() {
     const pocion = new objeto (1, 'Pocion', 10, 0, 0, 0);
     const espada = new objeto (2, 'Espada', 0, 0, 2, 15 );
 
+    function buscarInventario (){
+        let buscar = prompt ('Ingrese el elemnto a buscar')
+        const busqueda = inventario.find ((el) => el.nombre == buscar)
+        console.log (busqueda)
+    }
+
    
