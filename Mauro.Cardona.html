@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./main.css">
-    <script src="main.js"></script>
 </head>
 <body>
    <h1>Dungeons and Dragons</h1>
    <h2>Bienvenidos a la gran aventura</h2>
    <h3>elija su personaje</h3>
    <div class="personajes">
-    <button onclick="personaje1.eleccion(),cambioNombre() "><img src="./img/paladin.jpg"  class="tamaños" alt="Imagen del paladin"></button>
-    <button onclick="personaje2.eleccion(),cambioNombre()"><img src="./img/arquera.jpg" class="tamaños" alt="Imagen de la arquera"></button>
-    <button onclick="personaje3.eleccion(),cambioNombre()"><img src="./img/orco.jpg" class="tamaños" alt="Imagen del orco"></button>
-    <button onclick="personaje4.eleccion(),cambioNombre()"><img src="./img/maga.jpg" class="tamaños" alt="Imagen de la maga"></button>
-   </div>
+    <button id="paladin" onclick="personaje1.eleccion()"><img src="./img/paladin.jpg"   class="tamaños" alt="Imagen del paladin"></button>
+    <button id="arquera" onclick="personaje2.eleccion(),cambioNombre()"><img src="./img/arquera.jpg"  class="tamaños" alt="Imagen de la arquera"></button>
+    <button id="orco" onclick="personaje3.eleccion(),cambioNombre()"><img src="./img/orco.jpg" class="tamaños" alt="Imagen del orco"></button>
+    <button id="maga" onclick="personaje4.eleccion(),cambioNombre()"><img src="./img/maga.jpg" class="tamaños" alt="Imagen de la maga"></button>
+</div>
+<script src="main.js"></script>
 </body>
 </html>

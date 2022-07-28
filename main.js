@@ -3,7 +3,39 @@ function personaje (nombre, genero, raza, clase) {
     this.genero = genero;
     this.raza = raza;
     this.clase = clase;
-    this.eleccion = function() { alert ("Has elegijo a " + this.nombre + ", bienvenido a la aventura")}
+    this.eleccion = function() { 
+        alert ("Has elegijo a " + this.nombre + ", bienvenido a la aventura")    
+        if (this.nombre = "Oliver") {
+            const desaparecerPersonaje2 = document.querySelector("#arquera");
+            desaparecerPersonaje2.remove();
+            const desaparecerPersonaje3 = document.querySelector("#orco");
+            desaparecerPersonaje3.remove();
+            const desaparecerPersonaje4 = document.querySelector("#maga");
+            desaparecerPersonaje4.remove();}
+            alert (this.nombre)
+        if (this.nombre = personaje2) {
+            const desaparecerPersonaje1 = document.querySelector("#paladin");
+            desaparecerPersonaje1.remove();
+            const desaparecerPersonaje3 = document.querySelector("#orco");
+            desaparecerPersonaje3.remove();
+            const desaparecerPersonaje4 = document.querySelector("#maga");
+            desaparecerPersonaje4.remove();}
+            alert (this.nombre)
+        if (this.nombre = "Tron") {
+            const desaparecerPersonaje1 = document.querySelector("#paladin");
+            desaparecerPersonaje1.remove();
+            const desaparecerPersonaje2 = document.querySelector("#arquera");
+            desaparecerPersonaje2.remove();
+            const desaparecerPersonaje4 = document.querySelector("#maga");
+            desaparecerPersonaje4.remove();}
+        if (this.nombre = "Loli") {
+            const desaparecerPersonaje1 = document.querySelector("#paladin");
+            desaparecerPersonaje1.remove();
+            const desaparecerPersonaje2 = document.querySelector("#arquera");
+            desaparecerPersonaje2.remove();
+            const desaparecerPersonaje3 = document.querySelector("#orco");
+            desaparecerPersonaje3.remove();}
+        }
     
 }
 
@@ -22,7 +54,7 @@ let nombre;
             case true:
                 nombre = prompt ('Ingrese el nuevo nombre')
                 alert ('Su personaje ahora se llama ' + nombre)
-                window.location.href='caracterizacion.html'
+                //window.location.href='caracterizacion.html'
                 
                 
                     break;
@@ -45,52 +77,79 @@ let nombre;
 
 // funcion caracterizacion
 
-let puntosPendientes = 10
-let fuerza = 0
+let puntosPendientes = 5
+function puntitos(){
+document.querySelector("#puntos_disponibles").innerHTML = puntosPendientes;
+}
+
+
+let fuerza = 0;
+
+
 let vida = 0
 let magia  = 0
 
 function sumaFuerza(){
+    if (puntosPendientes >0) {
     fuerza = fuerza + 1
-    return(fuerza)
-}
+    puntosPendientes = puntosPendientes - 1
+    document.querySelector("#puntos_disponibles").innerHTML = puntosPendientes;
+    document.querySelector("#fuerza").innerHTML = fuerza;}
+    
+        else {
+            alert ('No posee puntos disponibles')
+        }
+    }
+        
+    
 function restaFuerza(){
+    if (fuerza > 0){
     fuerza = fuerza - 1
-    return(fuerza)
+    puntosPendientes = puntosPendientes + 1
+    document.querySelector("#puntos_disponibles").innerHTML = puntosPendientes;
+    document.querySelector("#fuerza").innerHTML = fuerza;}
 }
 function sumaVida(){
+    if (puntosPendientes > 0) {
     vida = vida + 1
-    return(vida)
+    puntosPendientes = puntosPendientes -1
+    document.querySelector("#puntos_disponibles").innerHTML = puntosPendientes;
+    document.querySelector("#vida").innerHTML = vida;}
+    else {
+        alert ('No posee puntos disponibles')
+    }
 }
 function restaVida(){
+    if (vida > 0){
     vida = vida - 1
-    return(vida)
-}
-function sumaMagia(){
-    return(magia)
-    magia = magia + 1
-}
-function restaMagia(){
-    return(magia)
-    magia = magia - 1
-}
-
-
-function caracterizacion(){
-    puntosPendientes = puntosPendientes - ((fuerza - vida - magia))
+    puntosPendientes = puntosPendientes + 1
+    document.querySelector("#puntos_disponibles").innerHTML = puntosPendientes;
+    document.querySelector("#vida").innerHTML = vida;}
     
 }
 
+function sumaMagia(){
+    if (puntosPendientes > 0){
+    magia = magia + 1
+    puntosPendientes = puntosPendientes -1
+    document.querySelector("#puntos_disponibles").innerHTML = puntosPendientes;
+    document.querySelector("#magia").innerHTML = magia;}
+    else {
+        'No posee puntos disponibles'
+    }
+}
+function restaMagia(){
+    if (magia > 0){
+    magia = magia - 1
+    puntosPendientes = puntosPendientes + 1
+    document.querySelector("#puntos_disponibles").innerHTML = puntosPendientes;
+    document.querySelector("#magia").innerHTML = magia;}
+   
+}
 
-function puntosPendiente() {
-    if (puntosPendientes >= 0){
-       let i = confirm('¿Confirmar puntos asignados?')}
-          if (i = true){
-                    window.location.href='nuevaVentana.html'}
-          else {
-            alert ('No posee los puntos suficientes')
-          }
-        }
+
+/*
+
 
 //Inventario
 
@@ -121,4 +180,4 @@ function puntosPendiente() {
         console.log (busqueda)
     }
 
-   
+   */
