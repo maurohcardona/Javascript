@@ -30,3 +30,10 @@
         opacity: 100%;
     }
 }
+
+.miDiv {
+    position: relative;
+    left: 48%;
+    margin-top: 10px;
+    
+}

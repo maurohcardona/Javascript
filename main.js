@@ -4,40 +4,75 @@ function personaje (nombre, genero, raza, clase) {
     this.raza = raza;
     this.clase = clase;
     this.eleccion = function() { 
-        alert ("Has elegijo a " + this.nombre + ", bienvenido a la aventura")    
-        if (this.nombre = "Oliver") {
+        alert ("Has elegijo a " + this.nombre + ", bienvenido a la aventura")};
+    }
+        
+    let botonPaladin = 
+        document.querySelector('#paladin')
+        botonPaladin.onclick = () => {personaje1.eleccion(), cambioNombre(), elejirP1(), botonSiguente()};
+
+    let botonarquera = 
+        document.querySelector('#arquera')
+        botonarquera.onclick = () => {personaje2.eleccion(), cambioNombre(), elejirP2()};
+
+    let botonorco = 
+        document.querySelector('#orco')
+        botonorco.onclick = () => {personaje3.eleccion(), cambioNombre(), elejirP3()};
+
+    let botonmaga = 
+        document.querySelector('#maga')
+        botonmaga.onclick = () => {personaje4.eleccion(), cambioNombre(), elejirP4()};
+        
+            function elejirP1 (){
             const desaparecerPersonaje2 = document.querySelector("#arquera");
             desaparecerPersonaje2.remove();
             const desaparecerPersonaje3 = document.querySelector("#orco");
             desaparecerPersonaje3.remove();
             const desaparecerPersonaje4 = document.querySelector("#maga");
             desaparecerPersonaje4.remove();}
-            alert (this.nombre)
-        if (this.nombre = personaje2) {
+        
+            
+            
+            function elejirP2 (){
             const desaparecerPersonaje1 = document.querySelector("#paladin");
             desaparecerPersonaje1.remove();
             const desaparecerPersonaje3 = document.querySelector("#orco");
             desaparecerPersonaje3.remove();
             const desaparecerPersonaje4 = document.querySelector("#maga");
             desaparecerPersonaje4.remove();}
-            alert (this.nombre)
-        if (this.nombre = "Tron") {
+            
+            function elejirP3 (){
             const desaparecerPersonaje1 = document.querySelector("#paladin");
             desaparecerPersonaje1.remove();
             const desaparecerPersonaje2 = document.querySelector("#arquera");
             desaparecerPersonaje2.remove();
             const desaparecerPersonaje4 = document.querySelector("#maga");
             desaparecerPersonaje4.remove();}
-        if (this.nombre = "Loli") {
+        
+            function elejirP4 (){
             const desaparecerPersonaje1 = document.querySelector("#paladin");
             desaparecerPersonaje1.remove();
             const desaparecerPersonaje2 = document.querySelector("#arquera");
             desaparecerPersonaje2.remove();
             const desaparecerPersonaje3 = document.querySelector("#orco");
             desaparecerPersonaje3.remove();}
-        }
+
+            function botonSiguente() {
+                const botonCarac = document.createElement('button');
+                button.className = "miDiv";
+                button.type = 'button'; 
+                button.innerText = 'Siguiente'; 
+                document.body.appendChild(botonCarac);
+            }
+            botonCarac.onclick = () => {window.location.href='caracterizacion.html'};
+                
+           /*function caracterizacion() {
+            window.location.href='caracterizacion.html';
+           } */  
+            
+        
     
-}
+            
 
 const personaje1 = new personaje ("Oliver", "Hombre", "Humano", "Paladin");
 const personaje2 = new personaje ("Morana", "Mujer", "elfa", "Arquera");
@@ -54,9 +89,6 @@ let nombre;
             case true:
                 nombre = prompt ('Ingrese el nuevo nombre')
                 alert ('Su personaje ahora se llama ' + nombre)
-                //window.location.href='caracterizacion.html'
-                
-                
                     break;
             case false:
                 window.location.href='caracterizacion.html'
