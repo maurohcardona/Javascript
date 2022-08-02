@@ -8,8 +8,8 @@ function personaje (nombre, genero, raza, clase) {
     }
         
     let botonPaladin = 
-        document.querySelector('#paladin')
-        botonPaladin.onclick = () => {personaje1.eleccion(), cambioNombre(), elejirP1(), botonSiguente()};
+        document.querySelector('#paladin');
+        botonPaladin.onclick = () => {personaje1.eleccion(), cambioNombre(), elejirP1()};
 
     let botonarquera = 
         document.querySelector('#arquera')
@@ -57,7 +57,7 @@ function personaje (nombre, genero, raza, clase) {
             const desaparecerPersonaje3 = document.querySelector("#orco");
             desaparecerPersonaje3.remove();}
 
-            function botonSiguente() {
+            /*function botonSiguente() {
                 const botonCarac = document.createElement('button');
                 button.className = "miDiv";
                 button.type = 'button'; 
@@ -66,7 +66,7 @@ function personaje (nombre, genero, raza, clase) {
             }
             botonCarac.onclick = () => {window.location.href='caracterizacion.html'};
                 
-           /*function caracterizacion() {
+           function caracterizacion() {
             window.location.href='caracterizacion.html';
            } */  
             
@@ -108,12 +108,11 @@ let nombre;
 }
 
 // funcion caracterizacion
+let puntosPendientes = 50;
 
-let puntosPendientes = 5
-function puntitos(){
-document.querySelector("#puntos_disponibles").innerHTML = puntosPendientes;
-}
-
+let puntitos = document.querySelector("#puntos_disponibles")
+    puntitos.innerHTML = puntosPendientes
+    
 
 let fuerza = 0;
 
@@ -122,11 +121,13 @@ let vida = 0
 let magia  = 0
 
 function sumaFuerza(){
-    if (puntosPendientes >0) {
+    if (puntosPendientes > 0) {
     fuerza = fuerza + 1
     puntosPendientes = puntosPendientes - 1
     document.querySelector("#puntos_disponibles").innerHTML = puntosPendientes;
-    document.querySelector("#fuerza").innerHTML = fuerza;}
+    document.querySelector("#fuerza").innerHTML = fuerza;
+    //alert (puntosPendientes)
+    }
     
         else {
             alert ('No posee puntos disponibles')
@@ -180,12 +181,12 @@ function restaMagia(){
 }
 
 
-/*
+
 
 
 //Inventario
 
-    const inventario = [];
+    /*const inventario = [];
 
      function AgregarAlInventario (objeto){
         inventario.push (objeto.nombre)
