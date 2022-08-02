@@ -7,55 +7,7 @@ function personaje (nombre, genero, raza, clase) {
         alert ("Has elegijo a " + this.nombre + ", bienvenido a la aventura")};
     }
         
-    let botonPaladin = 
-        document.querySelector('#paladin');
-        botonPaladin.onclick = () => {personaje1.eleccion(), cambioNombre(), elejirP1()};
-
-    let botonarquera = 
-        document.querySelector('#arquera')
-        botonarquera.onclick = () => {personaje2.eleccion(), cambioNombre(), elejirP2()};
-
-    let botonorco = 
-        document.querySelector('#orco')
-        botonorco.onclick = () => {personaje3.eleccion(), cambioNombre(), elejirP3()};
-
-    let botonmaga = 
-        document.querySelector('#maga')
-        botonmaga.onclick = () => {personaje4.eleccion(), cambioNombre(), elejirP4()};
-        
-            function elejirP1 (){
-            const desaparecerPersonaje2 = document.querySelector("#arquera");
-            desaparecerPersonaje2.remove();
-            const desaparecerPersonaje3 = document.querySelector("#orco");
-            desaparecerPersonaje3.remove();
-            const desaparecerPersonaje4 = document.querySelector("#maga");
-            desaparecerPersonaje4.remove();}
-        
-            
-            
-            function elejirP2 (){
-            const desaparecerPersonaje1 = document.querySelector("#paladin");
-            desaparecerPersonaje1.remove();
-            const desaparecerPersonaje3 = document.querySelector("#orco");
-            desaparecerPersonaje3.remove();
-            const desaparecerPersonaje4 = document.querySelector("#maga");
-            desaparecerPersonaje4.remove();}
-            
-            function elejirP3 (){
-            const desaparecerPersonaje1 = document.querySelector("#paladin");
-            desaparecerPersonaje1.remove();
-            const desaparecerPersonaje2 = document.querySelector("#arquera");
-            desaparecerPersonaje2.remove();
-            const desaparecerPersonaje4 = document.querySelector("#maga");
-            desaparecerPersonaje4.remove();}
-        
-            function elejirP4 (){
-            const desaparecerPersonaje1 = document.querySelector("#paladin");
-            desaparecerPersonaje1.remove();
-            const desaparecerPersonaje2 = document.querySelector("#arquera");
-            desaparecerPersonaje2.remove();
-            const desaparecerPersonaje3 = document.querySelector("#orco");
-            desaparecerPersonaje3.remove();}
+    
 
             /*function botonSiguente() {
                 const botonCarac = document.createElement('button');
@@ -68,7 +20,7 @@ function personaje (nombre, genero, raza, clase) {
                 
            function caracterizacion() {
             window.location.href='caracterizacion.html';
-           } */  
+           } */
             
         
     
@@ -96,6 +48,59 @@ let nombre;
                 }
    }
 
+   function elejirP1 (){
+    const desaparecerPersonaje2 = document.querySelector("#arquera");
+    desaparecerPersonaje2.remove();
+    const desaparecerPersonaje3 = document.querySelector("#orco");
+    desaparecerPersonaje3.remove();
+    const desaparecerPersonaje4 = document.querySelector("#maga");
+    desaparecerPersonaje4.remove();}
+
+    
+    
+    function elejirP2 (){
+    const desaparecerPersonaje1 = document.querySelector("#paladin");
+    desaparecerPersonaje1.remove();
+    const desaparecerPersonaje3 = document.querySelector("#orco");
+    desaparecerPersonaje3.remove();
+    const desaparecerPersonaje4 = document.querySelector("#maga");
+    desaparecerPersonaje4.remove();}
+    
+    function elejirP3 (){
+    const desaparecerPersonaje1 = document.querySelector("#paladin");
+    desaparecerPersonaje1.remove();
+    const desaparecerPersonaje2 = document.querySelector("#arquera");
+    desaparecerPersonaje2.remove();
+    const desaparecerPersonaje4 = document.querySelector("#maga");
+    desaparecerPersonaje4.remove();}
+
+    function elejirP4 (){
+    const desaparecerPersonaje1 = document.querySelector("#paladin");
+    desaparecerPersonaje1.remove();
+    const desaparecerPersonaje2 = document.querySelector("#arquera");
+    desaparecerPersonaje2.remove();
+    const desaparecerPersonaje3 = document.querySelector("#orco");
+    desaparecerPersonaje3.remove();}
+
+
+
+    document.querySelector('#paladin').onclick = () => {personaje1.eleccion(), cambioNombre(), elejirP1()};
+       
+
+    let botonarquera = 
+        document.querySelector('#arquera')
+        botonarquera.onclick = () => {personaje2.eleccion(), cambioNombre(), elejirP2()};
+
+    let botonorco = 
+        document.querySelector('#orco')
+        botonorco.onclick = () => {personaje3.eleccion(), cambioNombre(), elejirP3()};
+
+    let botonmaga = 
+        document.querySelector('#maga')
+        botonmaga.onclick = () => {personaje4.eleccion(), cambioNombre(), elejirP4()};
+        
+            
+
   //Funcion vidas restantes
    let vidas = 3
     function vidasRestantes(vidas){
@@ -107,78 +112,7 @@ let nombre;
     }
 }
 
-// funcion caracterizacion
-let puntosPendientes = 50;
 
-let puntitos = document.querySelector("#puntos_disponibles")
-    puntitos.innerHTML = puntosPendientes
-    
-
-let fuerza = 0;
-
-
-let vida = 0
-let magia  = 0
-
-function sumaFuerza(){
-    if (puntosPendientes > 0) {
-    fuerza = fuerza + 1
-    puntosPendientes = puntosPendientes - 1
-    document.querySelector("#puntos_disponibles").innerHTML = puntosPendientes;
-    document.querySelector("#fuerza").innerHTML = fuerza;
-    //alert (puntosPendientes)
-    }
-    
-        else {
-            alert ('No posee puntos disponibles')
-        }
-    }
-        
-    
-function restaFuerza(){
-    if (fuerza > 0){
-    fuerza = fuerza - 1
-    puntosPendientes = puntosPendientes + 1
-    document.querySelector("#puntos_disponibles").innerHTML = puntosPendientes;
-    document.querySelector("#fuerza").innerHTML = fuerza;}
-}
-function sumaVida(){
-    if (puntosPendientes > 0) {
-    vida = vida + 1
-    puntosPendientes = puntosPendientes -1
-    document.querySelector("#puntos_disponibles").innerHTML = puntosPendientes;
-    document.querySelector("#vida").innerHTML = vida;}
-    else {
-        alert ('No posee puntos disponibles')
-    }
-}
-function restaVida(){
-    if (vida > 0){
-    vida = vida - 1
-    puntosPendientes = puntosPendientes + 1
-    document.querySelector("#puntos_disponibles").innerHTML = puntosPendientes;
-    document.querySelector("#vida").innerHTML = vida;}
-    
-}
-
-function sumaMagia(){
-    if (puntosPendientes > 0){
-    magia = magia + 1
-    puntosPendientes = puntosPendientes -1
-    document.querySelector("#puntos_disponibles").innerHTML = puntosPendientes;
-    document.querySelector("#magia").innerHTML = magia;}
-    else {
-        'No posee puntos disponibles'
-    }
-}
-function restaMagia(){
-    if (magia > 0){
-    magia = magia - 1
-    puntosPendientes = puntosPendientes + 1
-    document.querySelector("#puntos_disponibles").innerHTML = puntosPendientes;
-    document.querySelector("#magia").innerHTML = magia;}
-   
-}
 
 
 
@@ -186,7 +120,7 @@ function restaMagia(){
 
 //Inventario
 
-    /*const inventario = [];
+    const inventario = [];
 
      function AgregarAlInventario (objeto){
         inventario.push (objeto.nombre)
@@ -213,4 +147,4 @@ function restaMagia(){
         console.log (busqueda)
     }
 
-   */
+   
