@@ -9,18 +9,7 @@ function personaje (nombre, genero, raza, clase) {
         
     
 
-            /*function botonSiguente() {
-                const botonCarac = document.createElement('button');
-                button.className = "miDiv";
-                button.type = 'button'; 
-                button.innerText = 'Siguiente'; 
-                document.body.appendChild(botonCarac);
-            }
-            botonCarac.onclick = () => {window.location.href='caracterizacion.html'};
-                
-           function caracterizacion() {
-            window.location.href='caracterizacion.html';
-           } */
+            
             
         
     
@@ -43,7 +32,7 @@ let nombre;
                 alert ('Su personaje ahora se llama ' + nombre)
                     break;
             case false:
-                window.location.href='caracterizacion.html'
+                
                 break;
                 }
    }
@@ -97,11 +86,18 @@ let nombre;
 
     let botonmaga = 
         document.querySelector('#maga')
-        botonmaga.onclick = () => {personaje4.eleccion(), cambioNombre(), elejirP4()};
+        botonmaga.onclick = () => {personaje4.eleccion(), cambioNombre(), elejirP4(), botonSiguente()};
         
             
 
-  //Funcion vidas restantes
+  function botonSiguente() {
+              document.querySelector('#miDiv').innerHTML = '<button id="bc" class = "miDiv"> Siguiente </button>' 
+                document.querySelector('#bc').onclick = () => location.href = "caracterizacion.html"}
+          
+  
+  
+  
+        //Funcion vidas restantes
    let vidas = 3
     function vidasRestantes(vidas){
     for (vidas = 3; vidas > 0; vidas--){
