@@ -3,10 +3,63 @@ function personaje (nombre, genero, raza, clase) {
     this.genero = genero;
     this.raza = raza;
     this.clase = clase;
-    this.eleccion = function() { 
-        alert ("Has elegijo a " + this.nombre + ", bienvenido a la aventura")};
-    }
+    
+}
+let nombre;
+let nombrep;
+const saludar = (nombrep) => {
+    Swal.fire({
+        title: `Estas seguro de elegir a ${nombrep}`,
         
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, estoy seguro!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire(`Haz elegido a ${nombrep}`);
+                cambioNombre();
+                
+                
+                
+            }
+        })}
+        function cambioNombre(){
+                Swal.fire({
+                title: 'Quieres cambiarle el nombre a tu personaje?',
+                showDenyButton: true,
+                confirmButtonText: 'Si quiero',
+                denyButtonText: `No, no quiero`,
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        title: 'Ingresa el nuevo nombre',
+                        input: 'text',
+                        showDenyButton: true,
+                        confirmButtonText: 'Confirmar',
+                        denyButtonText: `Cancelar`,
+                    }).then((resultado) => {
+                        if (resultado.value) {
+                             nombre = resultado.value;
+                             Swal.fire(`tu personaje ahora de llama ${nombre}`);
+                                
+                            }
+                })
+            } })}
+                
+                    
+                        
+                    
+                
+            
+                    
+                        
+            
+            
+         
+        
+    
     
 
             
@@ -22,7 +75,7 @@ const personaje4 = new personaje ("Loli", "Mujer", "Dranei", "Maga");
 
 
 
-let nombre;
+/*let nombre;
 
    function cambioNombre () {
         nombre = confirm ('¿Quiere cambiarle el nombre a su personaje?')
@@ -35,7 +88,7 @@ let nombre;
                 
                 break;
                 }
-   }
+   }*/
 
    function elejirP1 (){
     const desaparecerPersonaje2 = document.querySelector("#arquera");
@@ -72,21 +125,21 @@ let nombre;
     desaparecerPersonaje3.remove();}
 
 
-
-    document.querySelector('#paladin').onclick = () => {personaje1.eleccion(), cambioNombre(), elejirP1()};
+       
+    document.querySelector('#paladin').onclick = () => {saludar(personaje1.nombre), elejirP1(),botonSiguente()};
        
 
     let botonarquera = 
         document.querySelector('#arquera')
-        botonarquera.onclick = () => {personaje2.eleccion(), cambioNombre(), elejirP2()};
+        botonarquera.onclick = () => {saludar(personaje2.nombre), elejirP2(),botonSiguente()};
 
     let botonorco = 
         document.querySelector('#orco')
-        botonorco.onclick = () => {personaje3.eleccion(), cambioNombre(), elejirP3()};
+        botonorco.onclick = () => {saludar(personaje3.nombre), elejirP3(),botonSiguente()};
 
     let botonmaga = 
         document.querySelector('#maga')
-        botonmaga.onclick = () => {personaje4.eleccion(), cambioNombre(), elejirP4(), botonSiguente()};
+        botonmaga.onclick = () => {saludar(personaje4.nombre), elejirP4(), botonSiguente()};
         
             
 
@@ -142,5 +195,3 @@ let nombre;
         const busqueda = inventario.find ((el) => el.nombre == buscar)
         console.log (busqueda)
     }
-
-   

@@ -36,7 +36,12 @@ function sumaFuerza(){
     }
     
         else {
-            alert ('No posee puntos disponibles')
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: ' Parece que no posee puntos disponibles',
+                
+              })
         }
     }
         
@@ -59,9 +64,15 @@ function sumaVida(){
     localStorage.setItem('vida', JSON.stringify(vida))
     localStorage.setItem('puntosHAbilidad', JSON.stringify(puntosPendientes))}
     else {
-        alert ('No posee puntos disponibles')
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: ' Parece que no posee puntos disponibles',
+            
+          })
     }
-}
+    }
+
 function restaVida(){
     if (vida > 0){
     vida = vida - 1
@@ -82,9 +93,15 @@ function sumaMagia(){
     localStorage.setItem('magia', JSON.stringify(magia))
     localStorage.setItem('puntosHAbilidad', JSON.stringify(puntosPendientes))}
     else {
-        alert('No posee puntos disponibles')
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: ' Parece que no posee puntos disponibles',
+            
+          })
     }
-}
+    }
+
 function restaMagia(){
     if (magia > 0){
     magia = magia - 1
