@@ -13,8 +13,8 @@ let magia  = JSON.parse(localStorage.getItem('magia')) ?? 0;
     
 /*function sumarHabilidad(habilidad){
     if (puntosPendientes > 0) {
-        habilidad = habilidad + 1
-        puntosPendientes = puntosPendientes - 1
+        puntosPendientes = puntosPendientes - 1 
+        habilidad = habilidad + 1;
         
         document.querySelector("#puntos_disponibles").innerHTML = puntosPendientes
         document.querySelector("#fuerza").innerHTML = habilidad;
@@ -22,7 +22,6 @@ let magia  = JSON.parse(localStorage.getItem('magia')) ?? 0;
         alert(habilidad)
     }
 }*/
-
 
 function sumaFuerza(){
     if (puntosPendientes > 0) {

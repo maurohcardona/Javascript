@@ -19,7 +19,7 @@ const saludar = (nombrep) => {
     }).then((result) => {
         if (result.isConfirmed) {
             Swal.fire(`Haz elegido a ${nombrep}`);
-                cambioNombre();
+                ;
                 
                 
                 
@@ -50,7 +50,12 @@ const saludar = (nombrep) => {
                 
                     
                         
-                    
+         async function Elejir1 () {
+            await saludar(personaje1.nombre)
+            await cambioNombre()
+            //await elejirP2()
+            //await botonSiguente()
+         }
                 
             
                     
@@ -126,7 +131,8 @@ const personaje4 = new personaje ("Loli", "Mujer", "Dranei", "Maga");
 
 
        
-    document.querySelector('#paladin').onclick = () => {saludar(personaje1.nombre), elejirP1(),botonSiguente()};
+    document.querySelector('#paladin').onclick = () => {Elejir1()}
+    //{saludar(personaje1.nombre), elejirP1(),botonSiguente()};
        
 
     let botonarquera = 
