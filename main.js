@@ -20,7 +20,7 @@ const saludar = (nombrep) => {
         if (result.isConfirmed) {
             Swal.fire(`Haz elegido a ${nombrep}`);
                 ;
-                
+                cambioNombre()
                 
                 
             }
@@ -49,28 +49,7 @@ const saludar = (nombrep) => {
             } })}
                 
                     
-                        
-         async function Elejir1 () {
-            await saludar(personaje1.nombre)
-            await cambioNombre()
-            //await elejirP2()
-            //await botonSiguente()
-         }
-                
             
-                    
-                        
-            
-            
-         
-        
-    
-    
-
-            
-            
-        
-    
             
 
 const personaje1 = new personaje ("Oliver", "Hombre", "Humano", "Paladin");
@@ -131,8 +110,7 @@ const personaje4 = new personaje ("Loli", "Mujer", "Dranei", "Maga");
 
 
        
-    document.querySelector('#paladin').onclick = () => {Elejir1()}
-    //{saludar(personaje1.nombre), elejirP1(),botonSiguente()};
+    document.querySelector('#paladin').onclick = () => {saludar(personaje1.nombre), elejirP1(),botonSiguente()};
        
 
     let botonarquera = 
@@ -201,3 +179,70 @@ const personaje4 = new personaje ("Loli", "Mujer", "Dranei", "Maga");
         const busqueda = inventario.find ((el) => el.nombre == buscar)
         console.log (busqueda)
     }
+
+    // apis
+
+    const datosPaldin = () => {
+        fetch (`https://www.dnd5eapi.co/api/classes/paladin`)
+         .then((response) => response.json())
+        .then(info => {
+            console.log (info)
+            let data =""
+            //console.log (info.name)
+             data = `<h2>${info.name}</h2>
+                    <p>${info.spellcasting.info[0].desc}`
+            document.getElementById('informacion').innerHTML = data;
+        })
+          
+        }
+
+
+            const datosArquero = () => {
+                fetch (`https://www.dnd5eapi.co/api/classes/ranger`)
+                 .then((response) => response.json())
+                .then(info => {
+                    console.log (info)
+                    let data =""
+                    //console.log (info.name)
+                     data = `<h2>${info.name}</h2>
+                            <p>${info.spellcasting.info[0].desc}`
+                    document.getElementById('informacion').innerHTML = data;
+                })
+                  
+                }
+
+                const darosorco = () => {
+                    fetch (`https://www.dnd5eapi.co/api/classes/druid`)
+                     .then((response) => response.json())
+                    .then(info => {
+                        console.log (info)
+                        let data =""
+                        //console.log (info.name)
+                         data = `<h2>${info.name}</h2>
+                                <p>${info.spellcasting.info[0].desc}`
+                        document.getElementById('informacion').innerHTML = data;
+                    })
+                      
+                    }
+
+                    const datosmago = () => {
+                        fetch (`https://www.dnd5eapi.co/api/classes/wizard`)
+                         .then((response) => response.json())
+                        .then(info => {
+                            console.log (info)
+                            let data =""
+                            //console.log (info.name)
+                             data = `<h2>${info.name}</h2>
+                                    <p>${info.spellcasting.info[0].desc}`
+                            document.getElementById('informacion').innerHTML = data;
+                        })
+                          
+                        }
+    
+
+    document.querySelector('#ipaladin').onclick = () => {datosPaldin()}
+    document.querySelector('#iarquero').onclick = () => {datosArquero()}
+    document.querySelector('#iwarrior').onclick = () => {darosorco()}
+    document.querySelector('#image').onclick = () => {datosmago()}
+   
+    
